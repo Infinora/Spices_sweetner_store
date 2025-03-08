@@ -1,218 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Infinora - About Us</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
-  <style>
-    /* Global Styles */
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      color: #333;
-      background-color: #f9f9f9;
-    }
-
-    h1, h2, h3 {
-      margin: 0;
-      color: #2c3e50;
-    }
-
-    a {
-      text-decoration: none;
-      color: #4CAF50;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Header */
-    header {
-      background: linear-gradient(135deg, #4CAF50, #45a049);
-      color: white;
-      padding: 40px 0; /* Reduced padding */
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5rem; /* Reduced from 3rem */
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.1rem; /* Reduced from 1.2rem */
-      font-weight: 300;
-    }
-
-    /* Container */
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 40px auto;
-    }
-
-    /* Hero Section */
-    .hero {
-      background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
-      color: white;
-      padding: 80px 20px; /* Reduced padding */
-      text-align: center;
-      border-radius: 10px;
-      margin-bottom: 40px;
-    }
-
-    .hero h2 {
-      font-size: 2rem; /* Reduced from 2.5rem */
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 1.1rem; /* Reduced from 1.2rem */
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    /* About Us Section */
-    .about-us {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-      margin-bottom: 60px;
-    }
-
-    .about-us img {
-      width: 50%;
-      border-radius: 10px;
-    }
-
-    .about-us-content {
-      width: 50%;
-    }
-
-    .about-us h2 {
-      font-size: 1.8rem; /* Reduced from 2.2rem */
-      font-weight: 600;
-      margin-bottom: 20px;
-      color: #4CAF50;
-    }
-
-    .about-us p {
-      font-size: 1rem; /* Reduced from 1.1rem */
-      line-height: 1.8;
-    }
-
-    /* Mission & Vision Section */
-    .mission-vision {
-      display: flex;
-      gap: 40px;
-      margin-bottom: 60px;
-    }
-
-    .mission-vision .card {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      flex: 1;
-      text-align: center;
-    }
-
-    .mission-vision h3 {
-      font-size: 1.5rem; /* Reduced from 1.8rem */
-      font-weight: 600;
-      margin-bottom: 20px;
-      color: #4CAF50;
-    }
-
-    .mission-vision p {
-      font-size: 1rem; /* Reduced from 1.1rem */
-      line-height: 1.8;
-    }
-
-    /* Footer */
-    footer {
-      background: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 40px 0;
-      margin-top: 60px;
-    }
-
-    footer p {
-      margin: 0;
-      font-size: 1rem;
-    }
-
-    footer a {
-      color: #4CAF50;
-      font-weight: 500;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .about-us, .mission-vision {
-        flex-direction: column;
-      }
-
-      .about-us img, .about-us-content {
-        width: 100%;
-      }
-
-      .hero h2 {
-        font-size: 1.8rem; /* Adjusted for mobile */
-      }
-
-      .hero p {
-        font-size: 1rem; /* Adjusted for mobile */
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Spice Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: #F8F5F2; color: #4A3F35; }
+        .container { max-width: 1200px; margin: auto; padding: 40px; text-align: center; }
+        header { background: #A0522D; padding: 20px; color: white; font-size: 36px; font-weight: 700; text-transform: uppercase; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); margin-bottom: 30px; }
+        .about { background: #FFF3D6; padding: 40px; margin-bottom: 40px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; }
+        .about h2 { color: #A0522D; font-size: 28px; font-weight: 700; }
+        .about p { font-size: 18px; line-height: 1.6; }
+        .scroll-container { display: flex; overflow-x: auto; gap: 20px; padding: 20px; white-space: nowrap; scroll-snap-type: x mandatory; background: #FFF; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .scroll-container::-webkit-scrollbar { height: 8px; }
+        .scroll-container::-webkit-scrollbar-thumb { background: #A0522D; border-radius: 10px; }
+        .card { display: inline-block; background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: 0.3s; text-decoration: none; color: inherit; width: 300px; scroll-snap-align: start; text-align: center; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+        .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; transition: transform 0.3s; }
+        .card img:hover { transform: scale(1.1); }
+        .card h2 { color: #A0522D; margin: 15px 0 10px; font-size: 24px; font-weight: 600; }
+        footer { margin-top: 40px; font-size: 14px; color: white; padding: 20px; background: #A0522D; border-radius: 10px; text-align: center; font-weight: 600; }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Infinora</h1>
-    <p>Spices & Food Ingredients Supplier</p>
-    <p>"Pure Taste, Endless Possibilities"</p>
-  </header>
-
-  <div class="container">
-    <!-- Hero Section -->
-    <section class="hero">
-      <h2>About Us</h2>
-      <p>Discover the story behind Infinora and our commitment to delivering premium spices and food ingredients to elevate every meal.</p>
-    </section>
-
-    <!-- About Us Section -->
-    <section class="about-us">
-      <img src="https://via.placeholder.com/600x400" alt="About Us Image">
-      <div class="about-us-content">
-        <h2>Who We Are</h2>
-        <p>Infinora is a trusted provider of high-quality spices and food ingredients. With a passion for purity and flavor, we source the finest ingredients from around the world to bring you exceptional taste and aroma. Our products cater to households, restaurants, and the food industry, ensuring freshness and authenticity in every package.</p>
-      </div>
-    </section>
-
-    <!-- Mission & Vision Section -->
-    <section class="mission-vision">
-      <div class="card">
-        <h3>Our Mission</h3>
-        <p>To provide the highest quality spices and food ingredients that enhance the flavor and health of every meal, while promoting sustainability and ethical sourcing practices.</p>
-      </div>
-      <div class="card">
-        <h3>Our Vision</h3>
-        <p>To become the global leader in premium spices and food ingredients, known for our commitment to quality, innovation, and customer satisfaction.</p>
-      </div>
-    </section>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>Explore our world of premium spices and natural sweeteners at: <a href="https://www.infinora.com" target="_blank">www.infinora.com</a></p>
-  </footer>
+    <div class="container">
+        <header>Premium Spice Collection</header>
+        
+        <div class="about">
+            <h2>About Us</h2>
+            <p>Welcome to Premium Spice Collection, where we bring you the finest quality spices sourced from the best regions. Our commitment to purity and authenticity ensures that you receive nothing but the best. With years of expertise, we aim to provide a rich culinary experience through our premium-grade products.</p>
+        </div>
+        
+        <div class="scroll-container">
+            <a href="https://infinora.github.io/Spices_sweetner_store/Premium%20Ajwain%20Products.html" class="card"><img src="AJWINE.png" alt="Ajwain"><h2>Ajwain</h2></a>
+            <a href="https://infinora.github.io/Spices_sweetner_store/Premium%20Black%20Pepper%20Products.html" class="card"><img src="BLACK PEPPER.png" alt="Black Pepper"><h2>Black Pepper</h2></a>
+            <a href="https://infinora.github.io/Spices_sweetner_store/Premium%20Turmeric%20Products.html" class="card"><img src="TURMERIC.png" alt="Turmeric"><h2>Turmeric</h2></a>
+            <a href="https://infinora.github.io/Spices_sweetner_store/Premium%20Chilli%20Products.html" class="card"><img src="CHILLI.png" alt="Chilli"><h2>Chilli</h2></a>
+            <a href="https://infinora.github.io/Spices_sweetner_store/Premium%20Cardamom%20Products.html" class="card"><img src="CARDAMOM.png" alt="Cardamom"><h2>Cardamom</h2></a>
+            <a href="https://infinora.github.io/Spices_sweetner_store/Premium%20Coriander%20Products.html" class="card"><img src="CORIANDER.png" alt="Coriander"><h2>Coriander</h2></a>
+            <a href="https://infinora.github.io/Spices_sweetner_store/Premium%20Ginger%20Products.html" class="card"><img src="GINGER.png" alt="Ginger"><h2>Ginger</h2></a>
+            <a href="https://infinora.github.io/Spices_sweetner_store/Premium%20Cumin%20Products.html" class="card"><img src="CUMIN.png" alt="Cumin"><h2>Cumin</h2></a>
+        </div>
+        
+        <footer>&copy; 2025 Premium Spices. All rights reserved.</footer>
+    </div>
 </body>
 </html>
+
