@@ -7,7 +7,13 @@
     <style>
         body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: #CCFFCC; }
         .container { max-width: 1200px; margin: auto; padding: 40px; background: white; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
-        header { background: #99CC99; padding: 20px; text-align: center; color: black; font-size: 24px; font-weight: bold; border-radius: 10px 10px 0 0; }
+        header { background: #99CC99; padding: 20px; text-align: center; color: black; font-size: 24px; font-weight: bold; border-radius: 10px 10px 0 0; position: relative; }
+        .menu { position: absolute; left: 20px; top: 20px; cursor: pointer; font-size: 30px; }
+        .menu-bar { width: 30px; height: 3px; background: black; margin: 5px 0; display: block; }
+        .nav-links { display: none; position: absolute; top: 60px; left: 20px; background: white; padding: 10px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .nav-links a { display: block; padding: 10px; text-decoration: none; color: #2e7d32; font-weight: bold; }
+        .nav-links a:hover { background: #ddd; }
+        .show { display: block !important; }
         .product { display: flex; align-items: center; margin: 20px 0; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s; }
         .product:hover { transform: scale(1.02); }
         .product-info { flex: 1; }
@@ -17,10 +23,25 @@
         th { background-color: #99CC99; color: black; }
         footer { background: #333; color: white; text-align: center; padding: 15px; margin-top: 20px; border-radius: 0 0 10px 10px; }
     </style>
+    <script>
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("show");
+        }
+    </script>
 </head>
 <body>
     <div class="container">
-        <header>Premium Coriander Products</header>
+        <header>
+            <div class="menu" onclick="toggleMenu()">
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+            </div>
+            Premium Coriander Products
+            <div id="navLinks" class="nav-links">
+                <a href="index.html">Home</a>
+            </div>
+        </header>
 
         <div class="product">
             <img src="https://raw.githubusercontent.com/Infinora/coriander/main/eagle%20coriander%20seeds.jpg" alt="Eagle Coriander Seeds">
