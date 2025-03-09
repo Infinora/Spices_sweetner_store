@@ -7,7 +7,20 @@
     <style>
         body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
         .container { max-width: 1200px; margin: auto; padding: 40px; background: white; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
-        header { background: #4CAF50; padding: 20px; text-align: center; color: white; font-size: 24px; font-weight: bold; border-radius: 10px 10px 0 0; }
+        header { background: #4CAF50; padding: 20px; text-align: center; color: white; font-size: 24px; font-weight: bold; border-radius: 10px 10px 0 0; position: relative; }
+
+        /* Menu Styling */
+        .menu { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); cursor: pointer; }
+        .menu-bar { width: 30px; height: 4px; background: white; margin: 5px 0; display: block; border-radius: 2px; }
+
+        /* Navigation Links */
+        .nav-links { display: none; position: absolute; top: 60px; left: 20px; background: white; padding: 10px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .nav-links a { display: block; padding: 10px; text-decoration: none; color: #333; }
+        .nav-links a:hover { background: #ddd; }
+
+        /* Show menu on click */
+        .show { display: block !important; }
+
         .product { display: flex; align-items: center; margin: 20px 0; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s; }
         .product:hover { transform: scale(1.02); }
         .product img { width: 180px; height: 180px; margin-right: 20px; border-radius: 10px; border: 2px solid #ddd; }
