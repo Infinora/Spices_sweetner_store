@@ -3,32 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajwain Products</title>
+    <title>Premium Ajwain Products</title>
     <style>
-        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-        .container { max-width: 1200px; margin: auto; padding: 40px; background: white; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
-        header { background: #4CAF50; padding: 20px; text-align: center; color: white; font-size: 24px; font-weight: bold; border-radius: 10px 10px 0 0; position: relative; }
-
-        /* Menu Styling */
-        .menu { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); cursor: pointer; }
-        .menu-bar { width: 30px; height: 4px; background: white; margin: 5px 0; display: block; border-radius: 2px; }
-
-        /* Navigation Links */
-        .nav-links { display: none; position: absolute; top: 60px; left: 20px; background: white; padding: 10px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        .nav-links a { display: block; padding: 10px; text-decoration: none; color: #333; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: #F5DEB3; }
+        .container { max-width: 1200px; margin: auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+        header { background: #CD853F; padding: 20px; text-align: center; color: white; font-size: 24px; font-weight: bold; border-radius: 10px 10px 0 0; position: relative; }
+        
+        /* Navigation Menu */
+        .menu { position: absolute; left: 20px; top: 20px; cursor: pointer; font-size: 30px; }
+        .menu-bar { width: 30px; height: 3px; background: white; margin: 5px 0; display: block; }
+        .nav-links { display: none; position: absolute; top: 60px; left: 0; width: 100%; background: white; text-align: center; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .nav-links a { display: block; padding: 10px; text-decoration: none; color: black; font-weight: bold; }
         .nav-links a:hover { background: #ddd; }
-
-        /* Show menu on click */
         .show { display: block !important; }
 
-        .product { display: flex; align-items: center; margin: 20px 0; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        /* Product Section */
+        .product { display: flex; flex-wrap: wrap; align-items: center; margin: 20px 0; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s; }
         .product:hover { transform: scale(1.02); }
-        .product img { width: 180px; height: 180px; margin-right: 20px; border-radius: 10px; border: 2px solid #ddd; }
-        .product-info { flex: 1; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .product-info { flex: 1; text-align: center; }
+        .product img { width: 100%; max-width: 150px; height: auto; margin-bottom: 15px; border-radius: 10px; }
+
+        /* Table */
+        table { width: 100%; max-width: 100%; overflow-x: auto; display: block; border-collapse: collapse; margin-top: 10px; }
         th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-        th { background-color: #4CAF50; color: white; }
+        th { background-color: #CD853F; color: white; }
+
+        /* Footer */
         footer { background: #333; color: white; text-align: center; padding: 15px; margin-top: 20px; border-radius: 0 0 10px 10px; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .product { flex-direction: column; text-align: center; }
+            .product img { margin-bottom: 15px; }
+        }
     </style>
     <script>
         function toggleMenu() {
