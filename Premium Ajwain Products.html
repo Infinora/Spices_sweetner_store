@@ -17,6 +17,26 @@
         th { background-color: #4CAF50; color: white; }
         footer { background: #333; color: white; text-align: center; padding: 15px; margin-top: 20px; border-radius: 0 0 10px 10px; }
     </style>
+    <script>
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("show");
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="menu" onclick="toggleMenu()">
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+            </div>
+            Premium Ajwain Products
+            <div id="navLinks" class="nav-links">
+                <a href="index.html">Home</a>
+            </div>
+        </header>
+    </style>
 </head>
 <body>
     <div class="container">
