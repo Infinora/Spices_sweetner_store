@@ -3,25 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chili Products</title>
+    <title>Premium Chili Products</title>
     <style>
-        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-        .container { max-width: 1200px; margin: auto; padding: 40px; background: white; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
-        header { background: #d32f2f; padding: 20px; text-align: center; color: white; font-size: 24px; font-weight: bold; border-radius: 10px 10px 0 0; position: relative; }
-        .menu { position: absolute; left: 20px; top: 20px; cursor: pointer; font-size: 30px; }
-        .menu-bar { width: 30px; height: 3px; background: white; margin: 5px 0; display: block; }
-        .nav-links { display: none; position: absolute; top: 60px; left: 20px; background: white; padding: 10px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        .nav-links a { display: block; padding: 10px; text-decoration: none; color: #d32f2f; font-weight: bold; }
-        .nav-links a:hover { background: #ddd; }
-        .show { display: block !important; }
-        .product { display: flex; align-items: center; margin: 20px 0; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s; }
-        .product:hover { transform: scale(1.02); }
-        .product img { width: 150px; height: 150px; margin-right: 20px; border-radius: 5px; object-fit: cover; }
-        .product-info { flex: 1; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-        th { background-color: #d32f2f; color: white; }
-        footer { background: #333; color: white; text-align: center; padding: 15px; margin-top: 20px; border-radius: 0 0 10px 10px; }
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFE6E6;
+        }
+
+        .container {
+            max-width: 95%;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Header Styling */
+        header {
+            background: #B71C1C;
+            padding: 15px 20px;
+            text-align: center;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 10px 10px 0 0;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Toggle Menu Button */
+        .menu {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .menu-bar {
+            width: 30px;
+            height: 3px;
+            background: white;
+            display: block;
+        }
+
+        /* Navigation Menu */
+        .nav-links {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 15px;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        .nav-links a {
+            display: block;
+            padding: 8px 12px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover {
+            background: #ddd;
+        }
+
+        .show {
+            display: block !important;
+        }
+
+        /* Responsive Product Layout */
+        .product {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            padding: 15px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .product:hover {
+            transform: scale(1.02);
+        }
+
+        .product img {
+            width: 120px;
+            height: auto;
+            margin-right: 15px;
+            border-radius: 10px;
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #B71C1C;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .product {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .product img {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            header {
+                font-size: 18px;
+                padding: 12px;
+            }
+
+            .menu {
+                font-size: 20px;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 15px;
+            }
+        }
     </style>
     <script>
         function toggleMenu() {
@@ -38,9 +184,12 @@
                 <span class="menu-bar"></span>
             </div>
             Premium Chili Products
-            <div id="navLinks" class="nav-links">
-                <a href="index.html">Home</a>
-            </div>
+        </header>
+
+        <div id="navLinks" class="nav-links">
+            <a href="index.html">Home</a>
+        </div>
+
         </header>
         <div class="product">
             <img src="https://raw.githubusercontent.com/Infinora/chili/main/s%2017%20chilli.png" alt="Teja (S17) Chili">
