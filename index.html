@@ -15,77 +15,58 @@ const spices = [
 ];
 
 export default function PremiumSpiceCollection() {
-  return (
-    <div className="bg-[#0e0e0e] text-[#f4c067] min-h-screen font-[Poppins] p-6">
-      <header className="bg-[#222] text-white text-5xl font-extrabold text-center py-8 rounded-xl shadow-lg tracking-widest uppercase border-b-4 border-[#f4c067]">
-        Premium Spice Collection
-      </header>
-      
-      {/* Hero Carousel */}
-      <Carousel autoPlay infiniteLoop showThumbs={false} className="mt-8 rounded-xl shadow-lg">
-        {spices.map((spice) => (
-          <div key={spice.name}>
-            <img src={spice.img} alt={spice.name} className="h-96 object-cover" />
-          </div>
-        ))}
-      </Carousel>
-
-      {/* About Us Section */}
-      <section className="text-center py-12">
-        <h2 className="text-4xl font-bold text-[#f4c067]">About Us</h2>
-        <p className="mt-6 text-lg text-gray-400 max-w-3xl mx-auto">
-          Premium Spices Collection is a trusted provider of high-quality spices and food ingredients. With a passion for purity and flavor, we source the finest ingredients from around the world to bring you exceptional taste and aroma. Our products cater to households, restaurants, and the food industry, ensuring freshness and authenticity in every package.
-        </p>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="text-center py-12 bg-[#1a1a1a] rounded-xl shadow-lg">
-        <h2 className="text-3xl font-bold text-[#f4c067]">Why Choose Us?</h2>
-        <p className="mt-6 text-lg text-gray-400 max-w-3xl mx-auto">We provide 100% natural, organic-certified spices sourced from the finest regions. Our commitment to quality and sustainability ensures a premium experience in every pack.</p>
-      </section>
-
-      {/* Product Links */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 px-8">
-        {spices.map((spice) => (
-          <a key={spice.name} href={spice.link} target="_blank" rel="noopener noreferrer" className="relative group overflow-hidden rounded-2xl shadow-lg border border-[#f4c067] transform transition-all hover:scale-105">
-            <img src={spice.img} alt={spice.name} className="w-full h-60 object-cover group-hover:opacity-80" />
-            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity">
-              <h2 className="text-white text-2xl font-bold uppercase">{spice.name}</h2>
-            </div>
-          </a>
-        ))}
-      </div>
-      
-      {/* Contact Section */}
-      <section className="text-center py-12">
-        <h2 className="text-3xl font-bold text-[#f4c067]">Contact Us</h2>
-        <div className="mt-6 space-y-4">
-          <p className="text-lg flex items-center justify-center gap-3 text-gray-400">
-            <FaEnvelope className="text-[#f4c067] text-2xl" /> <a href="mailto:sureshkakkan@gmail.com">sureshkakkan@gmail.com</a>
-          </p>
-          <p className="text-lg flex items-center justify-center gap-3 text-gray-400">
-            <FaEnvelope className="text-[#f4c067] text-2xl" /> <a href="mailto:shraddhasj10@gmail.com">shraddhasj10@gmail.com</a>
-          </p>
-          <p className="text-lg flex items-center justify-center gap-3 text-gray-400">
-            <FaPhone className="text-[#f4c067] text-2xl" /> <a href="tel:+918766782801">+91 8766782801</a>
-          </p>
-          <p className="text-lg flex items-center justify-center gap-3 text-gray-400">
-            <FaPhone className="text-[#f4c067] text-2xl" /> <a href="tel:+919067112861">+91 9067112861</a>
-          </p>
-          <p className="text-lg flex items-center justify-center gap-3 text-gray-400">
-            <FaMapMarkerAlt className="text-[#f4c067] text-2xl" /> Gat No. 679/17/18, Kurali, Pune, Maharashtra, India 410505
-          </p>
-        </div>
-      </section>
-
-      <footer className="bg-[#222] text-white text-center p-5 rounded-2xl mt-10 font-bold text-lg shadow-md flex flex-col items-center">
-        <div className="flex gap-6 text-[#f4c067] text-3xl">
-          <FaInstagram className="cursor-pointer hover:text-white transition" />
-          <FaFacebook className="cursor-pointer hover:text-white transition" />
-          <FaTwitter className="cursor-pointer hover:text-white transition" />
-        </div>
-        <p className="mt-4">&copy; 2025 Premium Spices. All rights reserved.</p>
-      </footer>
-    </div>
+  return React.createElement(
+    "div",
+    { className: "bg-[#0e0e0e] text-[#f4c067] min-h-screen font-[Poppins] p-6" },
+    React.createElement(
+      "header",
+      { className: "bg-[#222] text-white text-5xl font-extrabold text-center py-8 rounded-xl shadow-lg tracking-widest uppercase border-b-4 border-[#f4c067]" },
+      "Premium Spice Collection"
+    ),
+    React.createElement(
+      Carousel,
+      { autoPlay: true, infiniteLoop: true, showThumbs: false, className: "mt-8 rounded-xl shadow-lg" },
+      spices.map(spice =>
+        React.createElement("div", { key: spice.name },
+          React.createElement("img", { src: spice.img, alt: spice.name, className: "h-96 object-cover" })
+        )
+      )
+    ),
+    React.createElement(
+      "section",
+      { className: "text-center py-12" },
+      React.createElement("h2", { className: "text-4xl font-bold text-[#f4c067]" }, "About Us"),
+      React.createElement("p", { className: "mt-6 text-lg text-gray-400 max-w-3xl mx-auto" },
+        "Premium Spices Collection is a trusted provider of high-quality spices and food ingredients. We source the finest ingredients to bring you exceptional taste and aroma."
+      )
+    ),
+    React.createElement(
+      "div",
+      { className: "grid grid-cols-2 md:grid-cols-4 gap-8 px-8" },
+      spices.map(spice =>
+        React.createElement("a", {
+          key: spice.name,
+          href: spice.link,
+          target: "_blank",
+          rel: "noopener noreferrer",
+          className: "relative group overflow-hidden rounded-2xl shadow-lg border border-[#f4c067] transform transition-all hover:scale-105"
+        },
+          React.createElement("img", { src: spice.img, alt: spice.name, className: "w-full h-60 object-cover group-hover:opacity-80" }),
+          React.createElement("div", { className: "absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity" },
+            React.createElement("h2", { className: "text-white text-2xl font-bold uppercase" }, spice.name)
+          )
+        )
+      )
+    ),
+    React.createElement(
+      "footer",
+      { className: "bg-[#222] text-white text-center p-5 rounded-2xl mt-10 font-bold text-lg shadow-md flex flex-col items-center" },
+      React.createElement("div", { className: "flex gap-6 text-[#f4c067] text-3xl" },
+        React.createElement(FaInstagram, { className: "cursor-pointer hover:text-white transition" }),
+        React.createElement(FaFacebook, { className: "cursor-pointer hover:text-white transition" }),
+        React.createElement(FaTwitter, { className: "cursor-pointer hover:text-white transition" })
+      ),
+      React.createElement("p", { className: "mt-4" }, "© 2025 Premium Spices. All rights reserved.")
+    )
   );
 }
