@@ -20,6 +20,9 @@
             font-size: 48px;
             margin: 0;
         }
+        .section {
+            padding: 40px;
+        }
         .container {
             display: flex;
             flex-wrap: wrap;
@@ -50,6 +53,37 @@
             text-decoration: none;
             border-radius: 5px;
         }
+        .about-section {
+            display: flex;
+            background: #f4f4f4;
+            padding: 40px;
+            align-items: center;
+            justify-content: center;
+        }
+        .about-text {
+            width: 50%;
+            text-align: left;
+            padding: 20px;
+        }
+        .about-text h2 {
+            color: #004d00;
+        }
+        .about-text ul {
+            list-style: none;
+            padding: 0;
+        }
+        .about-text ul li {
+            margin: 5px 0;
+            font-weight: bold;
+        }
+        .about-image {
+            width: 50%;
+            padding: 20px;
+        }
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
         .contact {
             background: #f4f4f4;
             padding: 20px;
@@ -63,11 +97,25 @@
         <p>Delivering the finest quality spices worldwide</p>
     </div>
 
-    <div class="container" id="spicesContainer"></div>
+    <div class="about-section">
+        <div class="about-text">
+            <h2>"Elevating Every Meal with Premium Ingredients"</h2>
+            <p>We specialize in delivering spices in multiple forms:</p>
+            <ul>
+                <li>✔ Whole</li>
+                <li>✔ Powdered</li>
+                <li>✔ Cubes & Extracts</li>
+            </ul>
+            <p>Premium Spices Collection is a trusted provider of high-quality spices and food ingredients. With a passion for purity and flavor, we source the finest ingredients from around the world to bring you exceptional taste and aroma. Our products cater to households, restaurants, and the food industry, ensuring freshness and authenticity in every package.</p>
+        </div>
+        <div class="about-image">
+            <img src="https://raw.githubusercontent.com/Infinora/spices-photo/main/about-us.jpg" alt="About Us">
+        </div>
+    </div>
 
-    <div class="contact">
-        <h2>Contact Us</h2>
-        <p>Email: info@spicesexport.com | Phone: +123 456 7890</p>
+    <div class="section" id="products">
+        <h2>Our Product Catalogue</h2>
+        <div class="container" id="spicesContainer"></div>
     </div>
 
     <script>
@@ -94,5 +142,10 @@
             container.appendChild(card);
         });
     </script>
+
+    <div class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@spicesexport.com | Phone: +123 456 7890</p>
+    </div>
 </body>
 </html>
