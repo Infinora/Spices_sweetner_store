@@ -3,26 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Spice Collection</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/react-responsive-carousel/3.2.20/carousel.min.css">
+    <title>Spices Export</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .spice-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+        }
+        .spice-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
 </head>
-<body class="bg-gray-900 text-yellow-400 min-h-screen font-sans p-6">
-    <div id="root"></div>
+<body>
+    <h1>Spices Export Catalog</h1>
+    <div class="container" id="spicesContainer"></div>
 
-    <!-- React and Babel -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.production.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.production.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-icons/4.3.1/react-icons.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-responsive-carousel/3.2.20/react-responsive-carousel.min.js"></script>
-
-    <!-- Your React App -->
-    <script type="text/babel">
-        const { useState } = React;
-        const { FaEnvelope, FaPhone, FaMapMarkerAlt, FaInstagram, FaFacebook, FaTwitter } = ReactIcons;
-        const { Carousel } = window.ReactResponsiveCarousel;
-
+    <script>
         const spices = [
             { name: "Ajwain", img: "https://raw.githubusercontent.com/Infinora/spices-photo/main/AJWINE.png", link: "https://infinora.github.io/Spices_sweetner_store/Premium%20Ajwain%20Products.html" },
             { name: "Black Pepper", img: "https://raw.githubusercontent.com/Infinora/spices-photo/main/BLACK%20PEPPER.png", link: "https://infinora.github.io/Spices_sweetner_store/Premium%20Black%20Pepper%20Products.html" },
@@ -34,57 +46,17 @@
             { name: "Cumin", img: "https://raw.githubusercontent.com/Infinora/spices-photo/main/CUMIN.png", link: "https://infinora.github.io/Spices_sweetner_store/Premium%20Cumin%20Products.html" }
         ];
 
-        function PremiumSpiceCollection() {
-            return (
-                <div className="bg-gray-900 text-yellow-400 min-h-screen font-sans p-6">
-                    <header className="bg-gray-800 text-white text-5xl font-extrabold text-center py-8 rounded-xl shadow-lg tracking-widest uppercase border-b-4 border-yellow-400">
-                        Premium Spice Collection
-                    </header>
-
-                    {/* Carousel */}
-                    <Carousel autoPlay infiniteLoop showThumbs={false} className="mt-8 rounded-xl shadow-lg">
-                        {spices.map(spice => (
-                            <div key={spice.name}>
-                                <img src={spice.img} alt={spice.name} className="h-96 object-cover mx-auto" />
-                            </div>
-                        ))}
-                    </Carousel>
-
-                    {/* About Us */}
-                    <section className="text-center py-12">
-                        <h2 className="text-4xl font-bold">About Us</h2>
-                        <p className="mt-6 text-lg text-gray-400 max-w-3xl mx-auto">
-                            Premium Spices Collection is a trusted provider of high-quality spices and food ingredients. We source the finest ingredients to bring you exceptional taste and aroma.
-                        </p>
-                    </section>
-
-                    {/* Product Links */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 px-8">
-                        {spices.map(spice => (
-                            <a key={spice.name} href={spice.link} target="_blank" rel="noopener noreferrer" className="relative group overflow-hidden rounded-2xl shadow-lg border border-yellow-400 transform transition-all hover:scale-105">
-                                <img src={spice.img} alt={spice.name} className="w-full h-60 object-cover group-hover:opacity-80" />
-                                <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity">
-                                    <h2 className="text-white text-2xl font-bold uppercase">{spice.name}</h2>
-                                </div>
-                            </a>
-                        ))}
-                    </div>
-
-                    {/* Footer */}
-                    <footer className="bg-gray-800 text-white text-center p-5 rounded-2xl mt-10 font-bold text-lg shadow-md flex flex-col items-center">
-                        <div className="flex gap-6 text-yellow-400 text-3xl">
-                            <FaInstagram className="cursor-pointer hover:text-white transition" />
-                            <FaFacebook className="cursor-pointer hover:text-white transition" />
-                            <FaTwitter className="cursor-pointer hover:text-white transition" />
-                        </div>
-                        <p className="mt-4">© 2025 Premium Spices. All rights reserved.</p>
-                    </footer>
-                </div>
-            );
-        }
-
-        // Render the React App
-        ReactDOM.render(<PremiumSpiceCollection />, document.getElementById("root"));
+        const container = document.getElementById("spicesContainer");
+        spices.forEach(spice => {
+            const card = document.createElement("div");
+            card.classList.add("spice-card");
+            card.innerHTML = `
+                <img src="${spice.img}" alt="${spice.name}">
+                <h3>${spice.name}</h3>
+                <a href="${spice.link}" target="_blank">View Product</a>
+            `;
+            container.appendChild(card);
+        });
     </script>
 </body>
 </html>
