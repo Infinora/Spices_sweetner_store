@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Spices Collection | Exquisite Quality Spices</title>
+    <title>Premium Spices Collection | Luxury Spices & Seasonings</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #3a2615;
@@ -15,69 +16,191 @@
             --light: #f9f7f3;
             --dark: #1e1408;
             --text: #3a3a3a;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
         body {
             font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
             color: var(--text);
             line-height: 1.6;
             background-color: var(--light);
+            overflow-x: hidden;
         }
         
         h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Cormorant Garamond', serif;
             font-weight: 600;
+            color: var(--primary);
         }
         
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), url('https://raw.githubusercontent.com/Infinora/spices-photo/main/background.jpg') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://raw.githubusercontent.com/Infinora/spices-photo/main/background.jpg') no-repeat center center/cover;
             color: white;
-            padding: 120px 20px;
+            height: 100vh;
+            min-height: 800px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
             position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease;
         }
         
         .hero h1 {
-            font-size: 3.5rem;
-            margin: 0 0 20px;
-            letter-spacing: 1px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-size: 4.5rem;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
         }
         
         .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
+            font-size: 1.4rem;
+            margin-bottom: 40px;
             font-weight: 300;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
         
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: var(--secondary);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            border: 2px solid var(--secondary);
+        }
+        
+        .btn:hover {
+            background: transparent;
+            color: var(--secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--secondary);
+            margin-left: 20px;
+        }
+        
+        .btn-outline:hover {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+        
+        /* Sections */
         .section {
-            padding: 80px 20px;
-            max-width: 1200px;
+            padding: 120px 20px;
+            max-width: 1400px;
             margin: 0 auto;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 80px;
             position: relative;
         }
         
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 3.2rem;
             color: var(--primary);
             display: inline-block;
             margin: 0;
-            padding-bottom: 15px;
+            padding-bottom: 20px;
         }
         
         .section-title h2::after {
             content: '';
             position: absolute;
-            width: 80px;
+            width: 120px;
             height: 3px;
             background-color: var(--secondary);
             bottom: 0;
@@ -85,93 +208,51 @@
             transform: translateX(-50%);
         }
         
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin: 40px auto;
+        .section-title p {
+            max-width: 700px;
+            margin: 20px auto 0;
+            font-size: 1.2rem;
         }
         
-        .spice-card {
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 0;
-            width: 280px;
-            text-align: center;
-            background: white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden;
-        }
-        
-        .spice-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-        }
-        
-        .spice-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px 8px 0 0;
-        }
-        
-        .spice-card-content {
-            padding: 20px;
-        }
-        
-        .spice-card h3 {
-            font-size: 1.5rem;
-            margin: 10px 0;
-            color: var(--primary);
-        }
-        
-        .spice-card a {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 25px;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            border: 2px solid var(--primary);
-        }
-        
-        .spice-card a:hover {
-            background: transparent;
-            color: var(--primary);
-        }
-        
+        /* About Section */
         .about-section {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
             background-color: white;
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
         }
         
         .about-text {
             flex: 1;
             min-width: 300px;
-            padding: 50px;
+            padding: 80px;
         }
         
         .about-text h2 {
-            font-size: 2rem;
+            font-size: 2.8rem;
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .about-text h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: var(--secondary);
+            bottom: -15px;
+            left: 0;
         }
         
         .about-text p {
-            margin-bottom: 25px;
-            font-size: 1.1rem;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            line-height: 1.8;
         }
         
         .about-text ul {
@@ -180,10 +261,11 @@
         }
         
         .about-text ul li {
-            margin: 15px 0;
+            margin: 25px 0;
             font-weight: 500;
             position: relative;
-            padding-left: 30px;
+            padding-left: 40px;
+            font-size: 1.1rem;
         }
         
         .about-text ul li::before {
@@ -192,12 +274,13 @@
             left: 0;
             color: var(--secondary);
             font-weight: bold;
+            font-size: 1.4rem;
         }
         
         .about-image {
             flex: 1;
             min-width: 300px;
-            height: 500px;
+            height: 700px;
         }
         
         .about-image img {
@@ -206,76 +289,379 @@
             object-fit: cover;
         }
         
-        .differentiation {
-            background-color: white;
-            border-radius: 10px;
-            padding: 50px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
-        }
-        
-        .differentiation h2 {
-            color: var(--primary);
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .differentiation ul {
-            list-style: none;
-            padding: 0;
+        /* Products Section */
+        .products-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 60px auto;
         }
         
-        .differentiation ul li {
-            margin: 0;
-            padding: 25px;
-            background-color: var(--light);
-            border-radius: 8px;
-            transition: transform 0.3s ease;
+        .spice-card {
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 10px;
+            padding: 0;
+            text-align: center;
+            background: white;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            overflow: hidden;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
         }
         
-        .differentiation ul li:hover {
-            transform: translateY(-5px);
+        .spice-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
-        .differentiation ul li strong {
+        .spice-card:hover {
+            transform: translateY(-15px) !important;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+        }
+        
+        .spice-card-img {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .spice-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .spice-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .spice-card-content {
+            padding: 30px;
+        }
+        
+        .spice-card h3 {
+            font-size: 1.8rem;
+            margin: 15px 0;
             color: var(--primary);
-            display: block;
-            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .spice-card h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .spice-card p {
+            min-height: 70px;
+            margin: 25px 0;
             font-size: 1.1rem;
         }
         
+        .spice-card .btn {
+            margin-top: 15px;
+            padding: 12px 30px;
+            font-size: 0.9rem;
+        }
+        
+        /* Features Section */
+        .features {
+            background-color: white;
+            border-radius: 15px;
+            padding: 80px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px;
+        }
+        
+        .feature-item {
+            padding: 40px;
+            border-radius: 10px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            background: var(--light);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .feature-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .feature-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(0,0,0,0) 100%);
+            z-index: 0;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-10px) !important;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .feature-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        /* Contact Section */
         .contact {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
             color: white;
-            padding: 80px 20px;
+            padding: 150px 20px;
             text-align: center;
+            position: relative;
+        }
+        
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(212, 175, 55, 0.1) 0%, rgba(0,0,0,0.8) 100%);
+        }
+        
+        .contact-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .contact h2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
+            font-size: 3.5rem;
+            margin-bottom: 50px;
         }
         
-        .contact p {
-            font-size: 1.2rem;
-            margin: 10px 0;
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: left;
+            margin-top: 60px;
         }
         
-        .contact a {
+        .contact-column h3 {
             color: var(--secondary);
-            text-decoration: none;
-            transition: color 0.3s ease;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
         }
         
-        .contact a:hover {
+        .contact-column p, .contact-column a {
+            margin: 15px 0;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .contact-column a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+        
+        .address {
+            font-style: normal;
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
             color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: left;
+        }
+        
+        .footer-column h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: rgba(255,255,255,0.7);
+            transition: var(--transition);
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInDown {
+            from { 
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero {
+                padding: 150px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section {
+                padding: 100px 20px;
+            }
+            
+            .about-text {
+                padding: 60px;
+            }
+            
+            .about-image {
+                height: 500px;
+            }
         }
         
         @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 40px;
+                transition: var(--transition);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.4rem;
             }
             
             .about-section {
@@ -284,160 +670,368 @@
             
             .about-image {
                 order: -1;
-                height: 300px;
+                height: 400px;
             }
             
-            .differentiation ul {
-                grid-template-columns: 1fr;
+            .about-text {
+                padding: 50px 30px;
+            }
+            
+            .section {
+                padding: 80px 20px;
+            }
+            
+            .contact h2 {
+                font-size: 2.8rem;
+            }
+            
+            .contact p {
+                font-size: 1.2rem;
+            }
+            
+            .btn {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .contact h2 {
+                font-size: 2.2rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="hero">
-        <h1>Premium Spices Collection</h1>
-        <p>Exquisite, handcrafted spices for the most discerning kitchens</p>
-    </div>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Premium <span>Spices</span></div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#products">Products</a>
+                <a href="#features">Features</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
 
-    <div class="section">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Premium Spices Collection</h1>
+            <p>The world's most exquisite spices, curated for culinary perfection</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn">Explore Collection</a>
+                <a href="#contact" class="btn btn-outline">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
         <div class="about-section">
             <div class="about-text">
-                <h2>The Gold Standard in Spices</h2>
-                <p>We source only the finest ingredients from trusted growers worldwide, offering our premium spices in multiple forms to meet every culinary need.</p>
+                <h2>The Essence of Culinary Excellence</h2>
+                <p>For generations, we've sought out the rarest and most flavorful spices from the farthest corners of the globe. Our commitment to quality transforms ordinary ingredients into extraordinary culinary experiences.</p>
                 <ul>
-                    <li>Whole spices for maximum freshness and flavor</li>
-                    <li>Expertly ground powders for consistent quality</li>
-                    <li>Concentrated cubes & extracts for intense flavor profiles</li>
+                    <li>Whole spices - Harvested at peak season for maximum essential oils</li>
+                    <li>Micro-ground powders - Precision milling for perfect texture</li>
+                    <li>Concentrated extracts - Capturing the soul of each spice</li>
                 </ul>
             </div>
             <div class="about-image">
-                <img src="https://raw.githubusercontent.com/Infinora/spices-photo/main/about-us.jpg" alt="About Our Spices">
+                <img src="https://raw.githubusercontent.com/Infinora/spices-photo/main/about-us.jpg" alt="About Premium Spices">
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="section">
+    <!-- Products Section -->
+    <section class="section" id="products">
         <div class="section-title">
-            <h2>Our Unparalleled Advantages</h2>
+            <h2>Our Signature Collection</h2>
+            <p>Hand-selected spices from around the world</p>
         </div>
-        <div class="differentiation">
-            <ul>
-                <li>
-                    <strong>Tailored Blending</strong>
-                    Create your signature spice blends with our custom formulation services
-                </li>
-                <li>
-                    <strong>Strategic Alliances</strong>
-                    We establish long-term partnerships that grow with your business
-                </li>
-                <li>
-                    <strong>Rigorous Standards</strong>
-                    Each batch passes our 15-point quality verification process
-                </li>
-                <li>
-                    <strong>Excellence Guaranteed</strong>
-                    We stand behind every product with our satisfaction promise
-                </li>
-                <li>
-                    <strong>Flavor Mastery</strong>
-                    Our team includes world-renowned spice experts and chefs
-                </li>
-                <li>
-                    <strong>Global Sourcing</strong>
-                    Direct relationships with growers across six continents
-                </li>
-                <li>
-                    <strong>Premium Packaging</strong>
-                    Elegant, airtight containers that preserve freshness
-                </li>
-                <li>
-                    <strong>White Label Services</strong>
-                    Comprehensive branding solutions for your product line
-                </li>
-            </ul>
-        </div>
-    </div>
+        <div class="products-container" id="spicesContainer"></div>
+    </section>
 
-    <div class="section" id="products">
+    <!-- Features Section -->
+    <section class="section" id="features">
         <div class="section-title">
-            <h2>Our Premium Selection</h2>
+            <h2>Why Choose Our Spices</h2>
+            <p>We go beyond ordinary to deliver exceptional quality and service</p>
         </div>
-        <div class="container" id="spicesContainer"></div>
-    </div>
+        <div class="features">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Customization</h3>
+                    <p>Explore a wide range of customization options tailored to your specific needs and preferences.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Partnership</h3>
+                    <p>We forge enduring partnerships that go beyond mere supplier relationships.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-double"></i>
+                    </div>
+                    <h3>Quality Assurance</h3>
+                    <p>Every product undergoes our rigorous 15-point quality verification process.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Excellence</h3>
+                    <p>We ensure your complete satisfaction with everything we deliver.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Expertise</h3>
+                    <p>Our team of brilliant minds crafts top-tier solutions for your needs.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Global Reach</h3>
+                    <p>Our legendary collection serves both Indian and international markets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <h2>Experience the Premium Difference</h2>
+            <p>Ready to elevate your culinary creations with our premium spices?</p>
+            
+            <div class="contact-info">
+                <div class="contact-column">
+                    <h3>Phone</h3>
+                    <a href="tel:+918766782801"><i class="fas fa-phone"></i> +91 8766782801</a>
+                    <a href="tel:+919067112861"><i class="fas fa-phone"></i> +91 9067112861</a>
+                </div>
+                <div class="contact-column">
+                    <h3>Email</h3>
+                    <a href="mailto:sureshkakkan@gmail.com"><i class="fas fa-envelope"></i> sureshkakkan@gmail.com</a>
+                    <a href="mailto:shraddhasj10@gmail.com"><i class="fas fa-envelope"></i> shraddhasj10@gmail.com</a>
+                </div>
+                <div class="contact-column">
+                    <h3>Address</h3>
+                    <div class="address">
+                        <p><i class="fas fa-map-marker-alt"></i> Gat No. 679/17/18, Kurali,</p>
+                        <p>Pune, Maharashtra,</p>
+                        <p>India 410505</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Premium Spices</h3>
+                <p>Delivering the world's finest spices since 1985. Our commitment to quality is unmatched in the industry.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#products">Our Collection</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Information</h3>
+                <ul>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Premium Spices Collection. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Your original spice data with your image links
         const spices = [
             { 
                 name: "Ajwain", 
                 img: "https://raw.githubusercontent.com/Infinora/spices-photo/main/AJWINE.png", 
                 link: "https://infinora.github.io/Spices_sweetner_store/Premium%20Ajwain%20Products.html",
-                desc: "Aromatic carom seeds with digestive properties"
+                desc: "Aromatic carom seeds with digestive properties",
+                price: "$24.99"
             },
             { 
                 name: "Black Pepper", 
                 img: "https://raw.githubusercontent.com/Infinora/spices-photo/main/BLACK%20PEPPER.png", 
                 link: "https://infinora.github.io/Spices_sweetner_store/Premium%20Black%20Pepper%20Products.html",
-                desc: "The king of spices with bold, pungent flavor"
+                desc: "The king of spices with bold, pungent flavor",
+                price: "$32.99"
             },
             { 
                 name: "Turmeric", 
                 img: "https://raw.githubusercontent.com/Infinora/spices-photo/main/TURMERIC.png", 
                 link: "https://infinora.github.io/Spices_sweetner_store/Premium%20Turmeric%20Products.html",
-                desc: "Golden-hued spice with vibrant color and earthy notes"
+                desc: "Golden-hued spice with vibrant color and earthy notes",
+                price: "$28.99"
             },
             { 
                 name: "Chilli", 
                 img: "https://raw.githubusercontent.com/Infinora/spices-photo/main/CHILLI.png", 
                 link: "https://infinora.github.io/Spices_sweetner_store/Premium%20Chilli%20Products.html",
-                desc: "From mild warmth to intense heat varieties"
+                desc: "From mild warmth to intense heat varieties",
+                price: "$26.99"
             },
             { 
                 name: "Cardamom", 
                 img: "https://raw.githubusercontent.com/Infinora/spices-photo/main/CARDAMOM.png", 
                 link: "https://infinora.github.io/Spices_sweetner_store/Premium%20Cardamom%20Products.html",
-                desc: "The queen of spices with complex floral aroma"
+                desc: "The queen of spices with complex floral aroma",
+                price: "$45.99"
             },
             { 
                 name: "Coriander", 
                 img: "https://raw.githubusercontent.com/Infinora/spices-photo/main/CORIANDER.png", 
                 link: "https://infinora.github.io/Spices_sweetner_store/Premium%20Coriander%20Products.html",
-                desc: "Versatile seeds with citrusy, slightly sweet flavor"
+                desc: "Versatile seeds with citrusy, slightly sweet flavor",
+                price: "$22.99"
             },
             { 
                 name: "Ginger", 
                 img: "https://raw.githubusercontent.com/Infinora/spices-photo/main/GINGER.png", 
                 link: "https://infinora.github.io/Spices_sweetner_store/Premium%20Ginger%20Products.html",
-                desc: "Warm, peppery, and slightly sweet root spice"
+                desc: "Warm, peppery, and slightly sweet root spice",
+                price: "$23.99"
             },
             { 
                 name: "Cumin", 
                 img: "https://raw.githubusercontent.com/Infinora/spices-photo/main/CUMIN.png", 
                 link: "https://infinora.github.io/Spices_sweetner_store/Premium%20Cumin%20Products.html",
-                desc: "Earthy, nutty seeds essential to global cuisines"
+                desc: "Earthy, nutty seeds essential to global cuisines",
+                price: "$21.99"
             }
         ];
 
+        // Initialize spice cards
         const container = document.getElementById("spicesContainer");
+        
         spices.forEach(spice => {
             const card = document.createElement("div");
             card.classList.add("spice-card");
             card.innerHTML = `
-                <img src="${spice.img}" alt="${spice.name}">
+                <div class="spice-card-img">
+                    <img src="${spice.img}" alt="${spice.name}">
+                </div>
                 <div class="spice-card-content">
                     <h3>${spice.name}</h3>
                     <p>${spice.desc}</p>
-                    <a href="${spice.link}" target="_blank">Explore</a>
+                    <div class="price">${spice.price}</div>
+                    <a href="${spice.link}" class="btn" target="_blank">View Product</a>
                 </div>
             `;
             container.appendChild(card);
         });
-    </script>
 
-    <div class="contact">
-        <h2>Experience the Premium Difference</h2>
-        <p>Email: <a href="mailto:concierge@premiumspices.com">concierge@premiumspices.com</a></p>
-        <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
-        <p>For exclusive wholesale accounts and private label inquiries</p>
-    </div>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Scroll animations
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.spice-card, .feature-item');
+            
+            elements.forEach((element, index) => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if(elementPosition < screenPosition) {
+                    setTimeout(() => {
+                        element.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        };
+
+        // Run animation check on load and scroll
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 15px rgba(0,0,0,0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 15px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
 </body>
 </html>
